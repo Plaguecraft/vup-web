@@ -390,29 +390,20 @@ img { max-width: 100%; display: block; }
 /* =========================================================================
    Footer
    ========================================================================= */
-.site-footer { padding: 52px 0 22px; background: rgba(11, 7, 16, 0.6); }
+.site-footer { padding: 52px 0 22px; background: rgba(11, 7, 16, 0.6); text-align: center; }
 
 /* El resto del sitio se mantiene en --maxw (1120px) por legibilidad de
    texto, pero el footer puede usar un poco mas de ancho para no quedar
    como una isla chica rodeada de mucho negro en monitores grandes. */
-.footer-grid, .footer-bottom { max-width: min(1400px, 90vw); }
+.footer-bottom { max-width: min(1400px, 90vw); }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 60px;
-  padding-bottom: 36px;
-}
-.footer-col-title {
-  margin: 0 0 14px; font-size: 12px; font-weight: 800;
-  letter-spacing: 1.5px; text-transform: uppercase; color: var(--text);
+.footer-brand {
+  display: flex; flex-direction: column; align-items: center;
+  padding-bottom: 30px;
 }
 .footer-logo { display: inline-flex; }
 .logo-footer { height: 32px; width: auto; filter: drop-shadow(0 0 16px rgba(231, 29, 115, 0.35)); }
 .footer-tagline { margin: 14px 0 20px; color: var(--muted); font-size: 13px; }
-
-.footer-col-text { margin: 0 0 18px; color: var(--muted); font-size: 13px; max-width: 280px; }
-.footer-col .btn-wa { padding: 11px 22px; font-size: 14px; }
 
 /* Linea con degrade de marca en vez de un borde plano: conecta visualmente
    el footer con el resto de la estetica neon en lugar de un divisor generico. */
@@ -462,11 +453,6 @@ img { max-width: 100%; display: block; }
   .section-title.left { text-align: center; }
   .section-title.left::after { margin-left: auto; }
 
-  /* Footer: por debajo de 860px, 2 columnas quedan apretadas -> 1 sola,
-     centrada, mismo criterio que el resto de las grillas del sitio. */
-  .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; padding-bottom: 28px; }
-  .footer-col-brand { display: flex; flex-direction: column; align-items: center; }
-  .footer-col-text { margin-left: auto; margin-right: auto; }
 }
 /* En pantallas angostas el header solo lleva logo + botón (sin "VUP CONTENIDOS") */
 @media (max-width: 720px) {
@@ -499,6 +485,24 @@ img { max-width: 100%; display: block; }
 @media (max-width: 720px) {
   .site-bg .blob { filter: blur(50px); }
   .site-header { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+
+  /* La franja negra durante el scroll lento es un bug conocido de Android:
+     un fondo `position: fixed` vive en su propia capa de composición que el
+     navegador repinta aparte del resto de la página, y con blur de por medio
+     a veces llega tarde y se ve negro hasta que el scroll frena. Bajar el
+     blur (arriba) ayuda pero no lo elimina porque el problema es la capa fija
+     en sí. En mobile no hace falta el efecto parallax de fondo fijo: pasa a
+     `absolute` y cubre todo el alto del documento, así scrollea junto con el
+     resto del contenido en la misma capa — sin repintado aparte, sin franja.
+     Necesita que <body> sea el contenedor de posicionamiento (position:
+     relative) para que inset:0 estire el fondo a la altura real del
+     documento y no solo a la del viewport. */
+  body { position: relative; }
+  .site-bg {
+    position: absolute;
+    transform: none;
+    will-change: auto;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
