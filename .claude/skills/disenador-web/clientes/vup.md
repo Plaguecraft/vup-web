@@ -51,7 +51,10 @@ Familia **Gotham**:
 - **Web online (GitHub Pages):** https://plaguecraft.github.io/vup-web/ — se despliega automáticamente desde la rama `main`. Cada `push` actualiza el sitio en ~1 min. Por ahora es un link interno/de muestra.
 
 ## Retoques (2026-07-09)
-- **Footer simplificado:** el footer tenía una segunda columna que repetía el CTA "¿Arrancamos? / Escribinos por WhatsApp" (ya está arriba, en su propia sección). Se sacó — el footer ahora es una sola columna centrada: logo + tagline + redes, divisor, y copyright abajo. Igual en mobile y desktop.
+- **Footer (versión final, aprobada por el cliente):** es una **barra fina de una sola fila**, igual en mobile y desktop, del mismo porte que el header (~61-69px de alto): **logo (izq) · "© 2026 VUP" (centro) · redes IG/FB (der)**, alineados al centro vertical. Barra propia con fondo más sólido (`rgba(9,6,14,0.9)`) + línea superior con degradé de marca (`border-image`) para que se lea como pie de página y no como un vacío negro.
+  - **El copyright se deja corto a propósito** ("© 2026 VUP"). Se probó el texto legal completo ("Todos los derechos reservados.") pero en celular no entra en un renglón y saltaba a 2 líneas; el cliente prefirió una sola línea limpia. Si algún día se quiere el texto legal, va solo en desktop (span oculto en mobile), no en una línea que se parta.
+  - Se descartaron versiones previas: footer apilado en 2 columnas (repetía el CTA), y footer apilado centrado (el cliente lo vio "enorme" y "encimado"). La conclusión firme: **para este cliente, footer = franja del porte del header, nunca un bloque alto.**
+- **Fondo animado en mobile — más presencia:** los 5 logos flotantes estaban pensados para una pantalla y en una página larga quedaban muy espaciados. Se **regeneran por JS** (`js/main.js`) a intervalos regulares según el alto real del documento (solo en `≤720px`), para que siempre se vea alguno al scrollear sin exagerar. Desktop mantiene los 5 originales.
 - **Franja negra al hacer scroll despacio (Android, sobre todo en el hero):** causada por el fondo global (`.site-bg`) en `position: fixed` — esa capa se compone aparte del resto de la página y en Android, con blur de por medio, a veces no llega a repintarse a tiempo durante scroll lento, y se ve negro un instante. Fix: en mobile (`max-width: 720px`) el fondo pasa a `position: absolute` (deja de ser una capa fija aparte y scrollea como el resto del contenido, sin repintado propio). Para que cubra todo el alto del documento y no solo el viewport, `body` pasa a `position: relative` en ese mismo breakpoint. En desktop el fondo sigue `fixed` (ahí no se vio el bug, se mantiene el efecto parallax).
 
 ## Pendientes de la web
@@ -59,3 +62,4 @@ Familia **Gotham**:
 - Versión horizontal / isologo del logo para el header.
 - Reemplazar textos placeholder por copy real y cargar imágenes/videos reales.
 - Definir número de WhatsApp real para los CTA.
+- **Revisar en pantalla 2K / monitor grande** (pendiente del cliente, 2026-07-09): confirmar que en anchos muy grandes el footer, el hero y las secciones no queden "perdidos" con tanto aire. Aprobado hasta ahora solo en celular y notebook.
