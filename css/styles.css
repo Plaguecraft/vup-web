@@ -413,12 +413,12 @@ img { max-width: 100%; display: block; }
 .footer-logo { display: inline-flex; flex: 0 0 auto; }
 .logo-footer { height: 32px; width: auto; filter: drop-shadow(0 0 16px rgba(231, 29, 115, 0.35)); }
 
-/* El copyright ocupa el centro flexible: se centra siempre y, si en un
-   telefono muy angosto no entra, ajusta tamano (clamp) antes que romper
-   la fila. min-width:0 permite que encoja dentro del flex. */
+/* El copyright ocupa el centro flexible y se centra siempre. Es corto
+   ("© 2026 VUP") a proposito: asi entra en un solo renglon en todos los
+   anchos, de celular a desktop, sin romper la fila. */
 .footer-copy {
   flex: 1 1 auto; min-width: 0; margin: 0; text-align: center;
-  color: var(--muted); font-size: clamp(11px, 3vw, 13px); letter-spacing: .2px;
+  color: var(--muted); font-size: 13px; letter-spacing: .2px; white-space: nowrap;
 }
 
 .footer-social { display: flex; gap: 8px; flex: 0 0 auto; }
