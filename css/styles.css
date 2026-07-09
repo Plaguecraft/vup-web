@@ -32,16 +32,24 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+
+/* overflow-x: clip en html + body evita el scroll/corrimiento horizontal en
+   móvil (los glows decorativos se salían del viewport). `clip` no crea un
+   contenedor de scroll, así que el header sticky sigue funcionando. */
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
 
 body {
   margin: 0;
+  max-width: 100%;
   font-family: var(--font);
   color: var(--text);
   background: var(--bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 h1, h2, h3 { line-height: 1.15; margin: 0 0 .5em; font-weight: 800; }
@@ -152,7 +160,7 @@ img { max-width: 100%; display: block; }
 .hero::before {
   content: "";
   position: absolute; left: 50%; top: 0; transform: translateX(-50%);
-  width: 700px; height: 420px;
+  width: min(700px, 120vw); height: 420px; max-width: 100vw;
   background: radial-gradient(circle, rgba(231, 29, 115, 0.22), transparent 70%);
   pointer-events: none; z-index: -1;
 }
@@ -361,7 +369,7 @@ img { max-width: 100%; display: block; }
 .cta-final { text-align: center; }
 .cta-final::before {
   content: ""; position: absolute; left: 50%; top: 0; transform: translateX(-50%);
-  width: 760px; height: 320px; z-index: -1;
+  width: min(760px, 120vw); height: 320px; max-width: 100vw; z-index: -1;
   background: radial-gradient(circle, rgba(231, 29, 115, 0.22), transparent 70%);
   pointer-events: none;
 }
