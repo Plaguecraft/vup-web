@@ -45,6 +45,10 @@ Familia **Gotham**:
 - **Tipografía:** Montserrat (Google Fonts) como **sustituto temporal de Gotham** (Gotham es de pago; falta licencia web).
 - **Imágenes/videos:** son recuadros placeholder a la espera de material real.
 
+## Publicación (deploy)
+- **Repositorio:** https://github.com/Plaguecraft/vup-web (público).
+- **Web online (GitHub Pages):** https://plaguecraft.github.io/vup-web/ — se despliega automáticamente desde la rama `main`. Cada `push` actualiza el sitio en ~1 min. Por ahora es un link interno/de muestra.
+
 ## Pendientes de la web
 - Conseguir licencia web de Gotham (o elegir alternativa definitiva) y reemplazar Montserrat.
 - Versión horizontal / isologo del logo para el header.
