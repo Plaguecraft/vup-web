@@ -388,26 +388,37 @@ img { max-width: 100%; display: block; }
 .cta-final p { color: var(--muted); max-width: 520px; margin: 0 auto 28px; }
 
 /* =========================================================================
-   Footer — una sola franja en fila, igual en mobile y desktop:
-   logo (izquierda) — copyright (medio) — redes (derecha del todo).
-   Del mismo porte que el header en vez de un bloque apilado.
+   Footer — barra fina en una sola fila, igual en mobile y desktop:
+   logo (izquierda) — copyright (centro) — redes (derecha).
+   Barra propia: fondo mas solido + linea superior de marca para que se
+   lea como pie de pagina y no como un vacio negro. Los 3 bloques van
+   alineados al centro vertical (align-items: center).
    ========================================================================= */
-.site-footer { padding: 16px 0; background: rgba(11, 7, 16, 0.6); }
+.site-footer {
+  padding: 18px 0;
+  background: rgba(9, 6, 14, 0.9);
+  border-top: 1px solid transparent;
+  /* linea superior con degrade de marca (borde-imagen) */
+  border-image: linear-gradient(90deg, transparent, var(--line-2) 25%, var(--line-2) 75%, transparent) 1;
+}
 
 /* El resto del sitio se mantiene en --maxw (1120px) por legibilidad de
    texto, pero el footer puede usar un poco mas de ancho para no quedar
    como una isla chica rodeada de mucho negro en monitores grandes. */
 .footer-inner {
   max-width: min(1400px, 90vw);
-  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
 
 .footer-logo { display: inline-flex; flex: 0 0 auto; }
-.logo-footer { height: 34px; width: auto; filter: drop-shadow(0 0 16px rgba(231, 29, 115, 0.35)); }
+.logo-footer { height: 32px; width: auto; filter: drop-shadow(0 0 16px rgba(231, 29, 115, 0.35)); }
 
+/* El copyright ocupa el centro flexible: se centra siempre y, si en un
+   telefono muy angosto no entra, ajusta tamano (clamp) antes que romper
+   la fila. min-width:0 permite que encoja dentro del flex. */
 .footer-copy {
-  margin: 0; color: var(--muted); font-size: 13px; letter-spacing: .2px;
-  white-space: nowrap;
+  flex: 1 1 auto; min-width: 0; margin: 0; text-align: center;
+  color: var(--muted); font-size: clamp(11px, 3vw, 13px); letter-spacing: .2px;
 }
 
 .footer-social { display: flex; gap: 8px; flex: 0 0 auto; }
@@ -470,9 +481,10 @@ img { max-width: 100%; display: block; }
   .logo img { height: 40px; }
 
   /* Footer: mismos 3 elementos en fila, un poco mas chicos para que
-     entren cómodos en pantallas angostas. */
-  .logo-footer { height: 28px; }
-  .footer-copy { font-size: 12px; }
+     entren cómodos en pantallas angostas. El copyright (clamp) sigue
+     centrado y encoge lo justo para no romper la fila. */
+  .site-footer { padding: 16px 0; }
+  .logo-footer { height: 26px; }
   .footer-social { gap: 6px; }
   .social-link { width: 28px; height: 28px; }
   .social-link svg { width: 13px; height: 13px; }
