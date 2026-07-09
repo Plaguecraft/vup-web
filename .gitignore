@@ -1,0 +1,16 @@
+# Dependencias
+node_modules/
+npm-debug.log*
+
+# Archivos del sistema operativo
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Configuración local de Claude (específica de cada máquina)
+.claude/settings.local.json
+
+# Temporales / build
+dist/
+.cache/
+*.log

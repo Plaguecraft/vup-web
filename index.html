@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VUP — Agencia de contenidos</title>
+  <meta name="description" content="VUP, agencia de contenidos y social media. (Página de prueba — réplica de estructura de referencia.)" />
+
+  <!--
+    ===========================================================================
+    NOTA (página de prueba)
+    - Réplica de la estructura de https://cicheroia.com/mentoria/ con marca VUP.
+    - LOGO: es un placeholder de texto ".logo" (clase CSS). Cuando tengamos el
+      logo real (PNG/EPS del Drive), se reemplaza por <img> en el header, el
+      footer y el fondo animado — están marcados con el comentario LOGO-SLOT.
+    - TIPOGRAFÍA: Gotham es de pago. Se usa Montserrat (Google Fonts) como
+      sustituto parecido hasta conseguir la licencia web de Gotham.
+    - Los espacios de imagen/video son recuadros ".placeholder" con su leyenda.
+    ===========================================================================
+  -->
+
+  <!-- Sustituto temporal de Gotham -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ===================== FONDO GLOBAL ANIMADO =====================
+       Capa fija detrás de toda la página: blobs de color de marca en
+       movimiento + logo VUP flotando sutilmente como marca de agua. -->
+  <div class="site-bg" aria-hidden="true">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+    <span class="blob blob-4"></span>
+    <div class="marks">
+      <img class="vup-mark" src="assets/logo-vup.png" alt="" />
+      <img class="vup-mark" src="assets/logo-vup.png" alt="" />
+      <img class="vup-mark" src="assets/logo-vup.png" alt="" />
+      <img class="vup-mark" src="assets/logo-vup.png" alt="" />
+      <img class="vup-mark" src="assets/logo-vup.png" alt="" />
+    </div>
+  </div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a href="#top" class="logo" aria-label="VUP inicio">
+        <img src="assets/logo-vup.png" alt="VUP — Contenido para redes" />
+      </a>
+      <span class="brand-center">VUP CONTENIDOS</span>
+      <a href="#contacto" class="btn btn-wa">Trabajemos juntos</a>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container hero-inner reveal">
+      <p class="eyebrow">Agencia de contenidos · Social media</p>
+      <h1>Dejá de improvisar tus redes.<br /><span class="hl">Te armamos el contenido</span> que tu marca necesita.</h1>
+      <p class="lead">Estrategia, producción y publicación. Un equipo que piensa, crea y gestiona el contenido de tu marca para que vos te dediques a tu negocio.</p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary btn-lg">Quiero mi contenido</a>
+        <a href="#casos" class="btn btn-ghost btn-lg">Ver trabajos</a>
+      </div>
+      <p class="hero-note">Respondemos nosotros, sin bots.</p>
+    </div>
+  </section>
+
+  <!-- ===================== DEMOS / TRABAJOS EN VIDEO ===================== -->
+  <section class="section" id="demos">
+    <div class="container">
+      <h2 class="section-title">Contenido real, hecho por VUP</h2>
+      <p class="section-sub">Una muestra de piezas producidas para marcas. (Texto de ejemplo.)</p>
+      <div class="grid grid-4">
+        <div class="placeholder ratio-9-16"><span>🎬 Video 1<br /><small>Reel de marca</small></span></div>
+        <div class="placeholder ratio-9-16"><span>🎬 Video 2<br /><small>Spot producto</small></span></div>
+        <div class="placeholder ratio-9-16"><span>🎬 Video 3<br /><small>Campaña</small></span></div>
+        <div class="placeholder ratio-9-16"><span>🎬 Video 4<br /><small>Testimonial</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CARRUSEL DE CASOS ===================== -->
+  <section class="section section-alt" id="casos">
+    <div class="container">
+      <h2 class="section-title">Marcas que confían en VUP</h2>
+      <p class="section-sub">Casos reales por rubro. (Ejemplos.)</p>
+
+      <div class="carousel">
+        <button class="carousel-arrow prev" aria-label="Anterior">‹</button>
+        <div class="carousel-track" id="track">
+          <article class="case-card"><div class="placeholder ratio-4-3"><span>🖼️ Caso<br /><small>Gastronomía</small></span></div><h3>Gastronomía</h3></article>
+          <article class="case-card"><div class="placeholder ratio-4-3"><span>🖼️ Caso<br /><small>Estética</small></span></div><h3>Estética</h3></article>
+          <article class="case-card"><div class="placeholder ratio-4-3"><span>🖼️ Caso<br /><small>Inmobiliaria</small></span></div><h3>Inmobiliaria</h3></article>
+          <article class="case-card"><div class="placeholder ratio-4-3"><span>🖼️ Caso<br /><small>Retail</small></span></div><h3>Retail</h3></article>
+          <article class="case-card"><div class="placeholder ratio-4-3"><span>🖼️ Caso<br /><small>Servicios</small></span></div><h3>Servicios</h3></article>
+          <article class="case-card"><div class="placeholder ratio-4-3"><span>🖼️ Caso<br /><small>Eventos</small></span></div><h3>Eventos</h3></article>
+        </div>
+        <button class="carousel-arrow next" aria-label="Siguiente">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EL SISTEMA / MÉTODO ===================== -->
+  <section class="section" id="metodo">
+    <div class="container split">
+      <div class="split-text reveal">
+        <h2 class="section-title left">Una sola estrategia que ordena todo tu contenido</h2>
+        <p>Definimos la voz, el estilo y el calendario de tu marca una vez, y a partir de ahí producimos todo de forma coherente — sin que tengas que pensar qué postear cada día. (Texto de ejemplo.)</p>
+        <ul class="check-list">
+          <li>Voz y estilo definidos para tu marca</li>
+          <li>Calendario de contenidos mensual</li>
+          <li>Producción de piezas lista para publicar</li>
+          <li>Gestión y análisis de resultados</li>
+        </ul>
+      </div>
+      <div class="split-media">
+        <div class="placeholder ratio-4-3"><span>🖼️ Imagen<br /><small>Hoja de estilo / sistema</small></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== COMPARATIVA ===================== -->
+  <section class="section section-alt" id="comparativa">
+    <div class="container">
+      <h2 class="section-title">Hacerlo solo vs. hacerlo con VUP</h2>
+      <div class="compare">
+        <div class="compare-col compare-bad">
+          <h3>Solo / improvisado</h3>
+          <ul>
+            <li>Postear cuando te acordás</li>
+            <li>Sin estrategia ni coherencia</li>
+            <li>Piezas hechas a las apuradas</li>
+            <li>No sabés qué funciona</li>
+          </ul>
+        </div>
+        <div class="compare-col compare-good">
+          <h3>Con VUP</h3>
+          <ul>
+            <li>Calendario planificado</li>
+            <li>Estrategia detrás de cada pieza</li>
+            <li>Producción profesional</li>
+            <li>Reportes con resultados</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AUTORIDAD / NOSOTROS ===================== -->
+  <section class="section" id="nosotros">
+    <div class="container split">
+      <div class="split-media">
+        <div class="placeholder ratio-1-1"><span>🖼️ Foto<br /><small>Equipo VUP</small></span></div>
+      </div>
+      <div class="split-text reveal">
+        <h2 class="section-title left">Somos VUP</h2>
+        <p>Una agencia de contenidos y social media. Ayudamos a marcas a comunicar mejor y crecer en redes. (Texto de ejemplo — acá va la historia y los números de VUP.)</p>
+        <div class="stats">
+          <div class="stat"><strong>+XX</strong><span>marcas</span></div>
+          <div class="stat"><strong>+XXX</strong><span>piezas / mes</span></div>
+          <div class="stat"><strong>XX</strong><span>años</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CAPACIDADES 01-04 ===================== -->
+  <section class="section section-alt" id="servicios">
+    <div class="container">
+      <h2 class="section-title">Lo que hacemos</h2>
+      <div class="grid grid-2">
+        <div class="capability reveal"><span class="cap-num">01</span><h3>Estrategia de contenido</h3><p>Definimos qué, cuándo y cómo comunicar. (Ejemplo.)</p></div>
+        <div class="capability reveal"><span class="cap-num">02</span><h3>Producción audiovisual</h3><p>Fotos, reels y videos para tu marca. (Ejemplo.)</p></div>
+        <div class="capability reveal"><span class="cap-num">03</span><h3>Community management</h3><p>Publicación y gestión diaria de tus redes. (Ejemplo.)</p></div>
+        <div class="capability reveal"><span class="cap-num">04</span><h3>Pauta publicitaria</h3><p>Campañas en Meta para llegar a más gente. (Ejemplo.)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROCESO 3 PASOS ===================== -->
+  <section class="section" id="proceso">
+    <div class="container">
+      <h2 class="section-title">Cómo trabajamos</h2>
+      <div class="grid grid-3">
+        <div class="step reveal"><span class="step-num">1</span><h3>Diagnóstico</h3><p>Entendemos tu marca, tu público y tus objetivos. (Ejemplo.)</p></div>
+        <div class="step reveal"><span class="step-num">2</span><h3>Estrategia y producción</h3><p>Armamos el plan y creamos el contenido. (Ejemplo.)</p></div>
+        <div class="step reveal"><span class="step-num">3</span><h3>Publicación y análisis</h3><p>Publicamos, medimos y ajustamos. (Ejemplo.)</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRECIO / PLANES ===================== -->
+  <section class="section section-alt" id="planes">
+    <div class="container">
+      <h2 class="section-title">Planes</h2>
+      <p class="section-sub">Estructura de ejemplo — los planes reales de VUP van acá.</p>
+      <div class="pricing">
+        <div class="price-card featured">
+          <span class="badge">Más elegido</span>
+          <h3>Plan Marca</h3>
+          <p class="price"><span>USD</span> XXX<small>/ mes</small></p>
+          <ul class="check-list">
+            <li>Estrategia mensual</li>
+            <li>XX piezas de contenido</li>
+            <li>Community management</li>
+            <li>Reporte de resultados</li>
+          </ul>
+          <a href="#contacto" class="btn btn-primary btn-block">Quiero este plan</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ES PARA VOS / NO ===================== -->
+  <section class="section" id="filtro">
+    <div class="container">
+      <div class="compare">
+        <div class="compare-col compare-good">
+          <h3>Es para vos si…</h3>
+          <ul>
+            <li>Querés estar presente en redes con constancia</li>
+            <li>No tenés tiempo de producir contenido</li>
+            <li>Buscás una imagen profesional</li>
+          </ul>
+        </div>
+        <div class="compare-col compare-bad">
+          <h3>NO es para vos si…</h3>
+          <ul>
+            <li>Buscás resultados mágicos de un día para el otro</li>
+            <li>No querés involucrarte en tu marca</li>
+            <li>Solo querés “subir por subir”</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TESTIMONIOS ===================== -->
+  <section class="section section-alt" id="testimonios">
+    <div class="container">
+      <h2 class="section-title">Lo que dicen las marcas</h2>
+      <div class="grid grid-3">
+        <figure class="testimonial reveal">
+          <div class="placeholder avatar"><span>👤</span></div>
+          <blockquote>“Texto de testimonio de ejemplo. Acá va la cita real del cliente.”</blockquote>
+          <figcaption><strong>Nombre Apellido</strong><span>@usuario · Rubro</span></figcaption>
+        </figure>
+        <figure class="testimonial reveal">
+          <div class="placeholder avatar"><span>👤</span></div>
+          <blockquote>“Texto de testimonio de ejemplo. Acá va la cita real del cliente.”</blockquote>
+          <figcaption><strong>Nombre Apellido</strong><span>@usuario · Rubro</span></figcaption>
+        </figure>
+        <figure class="testimonial reveal">
+          <div class="placeholder avatar"><span>👤</span></div>
+          <blockquote>“Texto de testimonio de ejemplo. Acá va la cita real del cliente.”</blockquote>
+          <figcaption><strong>Nombre Apellido</strong><span>@usuario · Rubro</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ===================== -->
+  <section class="section" id="faq">
+    <div class="container container-narrow">
+      <h2 class="section-title">Preguntas frecuentes</h2>
+      <div class="faq">
+        <details class="faq-item"><summary>¿Necesito saber de redes?</summary><p>No. De eso nos encargamos nosotros. (Respuesta de ejemplo.)</p></details>
+        <details class="faq-item"><summary>¿En cuánto tiempo se ven resultados?</summary><p>Depende de la marca y el rubro. (Respuesta de ejemplo.)</p></details>
+        <details class="faq-item"><summary>¿Trabajan con cualquier rubro?</summary><p>Trabajamos con marcas de distintos rubros. (Respuesta de ejemplo.)</p></details>
+        <details class="faq-item"><summary>¿Puedo contratar solo un servicio?</summary><p>Sí, los servicios se pueden tomar por separado. (Respuesta de ejemplo.)</p></details>
+        <details class="faq-item"><summary>¿Cómo es el pago?</summary><p>Detalle de pago de ejemplo.</p></details>
+        <details class="faq-item"><summary>¿Dónde están ubicados?</summary><p>Ubicación de ejemplo.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CTA FINAL ===================== -->
+  <section class="section cta-final" id="contacto">
+    <div class="container reveal">
+      <h2>¿Arrancamos?</h2>
+      <p>Escribinos por WhatsApp y charlamos sobre tu marca. Respondemos nosotros, personalmente.</p>
+      <a href="#" class="btn btn-wa btn-lg">Escribinos por WhatsApp</a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <img class="logo-footer" src="assets/logo-vup.png" alt="VUP" />
+      <p>© 2026 VUP · Agencia de contenidos. Página de prueba.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
