@@ -26,9 +26,10 @@ Familia **Gotham**:
 > Pendiente: conseguir los archivos de la fuente (o su equivalente web) para poder usarla en la página. Gotham es de pago; si no hay licencia web, evaluar una alternativa parecida.
 
 ### Logos
-- Logo principal ya descargado del Drive → **`assets/logo-vup.png`** (96 KB, fondo transparente).
+- Logo principal ya descargado del Drive → **`assets/logo-vup.png`** (fondo transparente). **(2026-07-08)** se recortó el margen transparente sobrante (665×927 → 633×897, mismo contenido, solo se sacó aire vacío alrededor).
 - Es un logo **neón**: "VUP" en blanco dentro de un marco violeta tipo pantalla de celular, bajada "Contenido para redes", con glow rosa/magenta. **Pensado para fondo oscuro** (las letras son blancas → no sirve sobre fondo claro).
-- Es de **composición vertical (portrait)**: en un header horizontal queda angosto/pequeño. Pendiente: pedir/generar una versión horizontal (lockup) para el header, o un isologo compacto.
+- Es de **composición vertical (portrait)** con 3 elementos apilados (marco + "VUP" + bajada "Contenido para redes"): en el header/footer (40-54px de alto) el conjunto se ve ilegible — no es un problema de nitidez, es que a ese tamaño no entran los 3 elementos con claridad. Recortar el margen transparente ayuda poco; hace falta separar el marco+VUP de la bajada.
+- **Pendiente — bloqueado, necesita material del cliente (2026-07-08):** para hacer una versión compacta (isologo) sin inventar nada, pedimos por Drive: (a) `estetica vup.pdf` (manual de marca) — puede que ya defina un isologo/versión compacta oficial; (b) el archivo **vectorial** original (AI/EPS/SVG) si existe, para ver si el marco+VUP y la bajada están en objetos/capas separadas y así exportar solo esa parte tal cual fue diseñada. El cliente explícitamente no quiere que se recorte/edite el logo por nuestra cuenta — solo usar piezas que ya vengan separadas en el archivo fuente.
 - Origen en Drive: carpeta VUP → `12.REDES VUP` → `redes vup` → `LOGO.png`. También existen `logoAnimado.mp4` (logo animado, 6 MB) y `estetica vup.pdf` (manual de marca) si hacen falta.
 
 ---

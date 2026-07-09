@@ -73,6 +73,12 @@ img { max-width: 100%; display: block; }
     radial-gradient(1200px 700px at 50% -15%, rgba(148, 97, 165, 0.22), transparent 60%),
     radial-gradient(900px 600px at 85% 15%, rgba(231, 29, 115, 0.16), transparent 60%),
     radial-gradient(900px 700px at 10% 90%, rgba(148, 97, 165, 0.14), transparent 60%);
+  /* Fuerza su propia capa de composición (GPU). Sin esto, algunos Android
+     (Chrome/Samsung Internet) no terminan de pintar este fondo fixed a
+     tiempo durante el scroll rápido y se ven franjas negras hasta que
+     el scroll se frena. */
+  transform: translateZ(0);
+  will-change: transform;
 }
 .site-bg .blob {
   position: absolute;
@@ -442,6 +448,15 @@ img { max-width: 100%; display: block; }
   .footer-inner { flex-direction: column; text-align: center; gap: 20px; }
   .footer-social { order: 2; }
   .site-footer p { order: 3; }
+}
+
+/* Menos costo de GPU en celulares: blur pesado + backdrop-filter del header
+   compitiendo en cada frame de scroll es lo que generaba las franjas negras
+   en equipos de gama media. Con blur más liviano el navegador llega a
+   pintar el fondo a tiempo. */
+@media (max-width: 720px) {
+  .site-bg .blob { filter: blur(50px); }
+  .site-header { backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
 }
 
 @media (prefers-reduced-motion: reduce) {
