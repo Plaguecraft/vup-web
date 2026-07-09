@@ -50,6 +50,10 @@ Familia **Gotham**:
 - **Repositorio:** https://github.com/Plaguecraft/vup-web (público).
 - **Web online (GitHub Pages):** https://plaguecraft.github.io/vup-web/ — se despliega automáticamente desde la rama `main`. Cada `push` actualiza el sitio en ~1 min. Por ahora es un link interno/de muestra.
 
+## Retoques (2026-07-09)
+- **Footer simplificado:** el footer tenía una segunda columna que repetía el CTA "¿Arrancamos? / Escribinos por WhatsApp" (ya está arriba, en su propia sección). Se sacó — el footer ahora es una sola columna centrada: logo + tagline + redes, divisor, y copyright abajo. Igual en mobile y desktop.
+- **Franja negra al hacer scroll despacio (Android, sobre todo en el hero):** causada por el fondo global (`.site-bg`) en `position: fixed` — esa capa se compone aparte del resto de la página y en Android, con blur de por medio, a veces no llega a repintarse a tiempo durante scroll lento, y se ve negro un instante. Fix: en mobile (`max-width: 720px`) el fondo pasa a `position: absolute` (deja de ser una capa fija aparte y scrollea como el resto del contenido, sin repintado propio). Para que cubra todo el alto del documento y no solo el viewport, `body` pasa a `position: relative` en ese mismo breakpoint. En desktop el fondo sigue `fixed` (ahí no se vio el bug, se mantiene el efecto parallax).
+
 ## Pendientes de la web
 - Conseguir licencia web de Gotham (o elegir alternativa definitiva) y reemplazar Montserrat.
 - Versión horizontal / isologo del logo para el header.
