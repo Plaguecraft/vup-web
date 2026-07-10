@@ -402,11 +402,15 @@ img { max-width: 100%; display: block; }
   border-image: linear-gradient(90deg, transparent, var(--line-2) 25%, var(--line-2) 75%, transparent) 1;
 }
 
-/* El resto del sitio se mantiene en --maxw (1120px) por legibilidad de
-   texto, pero el footer puede usar un poco mas de ancho para no quedar
-   como una isla chica rodeada de mucho negro en monitores grandes. */
+/* El footer usa el mismo modelo que el header: ancho completo con 40px de
+   padding lateral (16px en mobile, ver responsive), en vez de una caja centrada
+   con tope. Asi el logo y las redes del footer quedan alineados con el logo y el
+   boton del header en todos los anchos, de celular a 2K/4K. Con el tope anterior
+   (min(1400px, 90vw)) en monitores grandes el footer quedaba como isla centrada
+   muy adentro, fuera de sintonia con el header. Estructura identica al header:
+   logo (izq) · texto centrado (flex) · extremo (der). */
 .footer-inner {
-  max-width: min(1400px, 90vw);
+  max-width: none; padding-left: 40px; padding-right: 40px;
   display: flex; align-items: center; justify-content: space-between; gap: 16px;
 }
 
@@ -465,6 +469,9 @@ img { max-width: 100%; display: block; }
   .header-inner { padding: 10px 16px; }
   .brand-center { display: none; }
   .header-inner .btn { padding: 9px 16px; font-size: 13px; }
+  /* El footer acompaña el mismo padding lateral que el header en mobile (16px),
+     para que logo y redes sigan alineados con el header en pantallas angostas. */
+  .footer-inner { padding-left: 16px; padding-right: 16px; }
 }
 
 @media (max-width: 560px) {
