@@ -35,7 +35,18 @@ Familia **Gotham**:
 ---
 
 ## Brief de la web
-> Pendiente de definir. Acá se anota: objetivo de la web, a quién le habla, qué secciones lleva, referencia de diseño, y cualquier decisión que se vaya tomando.
+**Definido por Piero (2026-11-02):**
+- **Objetivo principal:** que la gente escriba por **WhatsApp**. La web es una landing institucional de la empresa, **muy visual** ("que sea linda"): muestra trabajos, marcas con las que trabajamos, testimonios y **paquetes de servicio con precios**.
+- **WhatsApp en toda la página:** botón en el header, CTA al final de las secciones clave y **botón flotante** siempre visible. Cada botón con **mensaje precargado distinto** (ej. "Hola, quiero el plan X") para saber desde dónde escribió cada consulta. Ojo con el exceso: que se sienta presente, no invasivo.
+- **Quién la maneja:** Piero, desde Claude Code. No hace falta panel de edición (tipo WordPress) por ahora.
+- **A quién le habla:** pendiente de confirmar (el texto actual apunta a marcas/negocios que necesitan contenido para redes).
+- **A futuro (no ahora):** login, newsletter y cobros online (Mercado Pago). Cuando llegue: el área con login va aparte de la landing (ej. un subdominio `app.`), con un servicio de cuentas — nunca login programado desde cero. Cobrar online suma legales (términos, privacidad, reembolsos, botón de arrepentimiento) y facturación.
+- **Referencias estudiadas:**
+  - [cicheroia.com/mentoria](https://cicheroia.com/mentoria/) — base de la estructura actual.
+  - [simuladordenegocios.com](https://simuladordenegocios.com/) (2026-11-02) — es una app (Next.js + login + Mercado Pago/PayPal + chat con IA), no solo una landing. De su landing sirven: franja de números debajo del hero, planes deslizables de costado en mobile, foto grande del referente en el hero. Casi sin animaciones.
+- **Estructura propuesta (2026-11-02, pendiente de OK):** la actual + franja de números bajo el hero + botón flotante de WhatsApp + planes deslizables en mobile. Opcional: sacar "Método", "Comparativa" y "Es para vos si…" para acortar.
+- **Material que falta de VUP:** número de WhatsApp, 4-8 reels/videos y fotos por rubro (con permiso de cada marca), números reales, precios (o "a consultar"), testimonios reales, links de redes.
+- **Videos:** reels cortos comprimidos (pocos MB, loop sin sonido); los largos en YouTube/Vimeo insertados. No subir videos pesados a la web.
 
 ## Decisiones tomadas
 - **Página de prueba (2026-07-08):** réplica de estructura de la referencia [cicheroia.com/mentoria](https://cicheroia.com/mentoria/) con marca VUP. Archivos: `index.html`, `css/styles.css`, `js/main.js`.
